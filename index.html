@@ -18,35 +18,39 @@
 
   <h2>1. Overview</h2>
   <p>
-    DarkLens is designed to detect and highlight potential dark patterns in website user interfaces while
-    minimizing the collection and use of personal information. The extension focuses on processing the
-    minimum amount of data necessary to provide its core functionality.
+    DarkLens is designed to detect and highlight potential dark patterns in website user interfaces
+    while minimizing the collection and use of personal information. The extension focuses on
+    processing the minimum amount of data necessary to provide its core functionality.
   </p>
 
   <h2>2. Data We Collect and Process</h2>
   <p>
-    DarkLens is not intended to collect personally identifiable information (“PII”) such as your name,
-    email address, phone number, home address, government ID numbers, payment information, or
-    authentication credentials (passwords, cookies, tokens), and it is not designed to build profiles
-    about you.[web:38]
+    DarkLens is <strong>not</strong> intended to collect personally identifiable information (“PII”)
+    such as your name, email address, phone number, home address, government ID numbers,
+    payment information, or authentication credentials (passwords, cookies, tokens), and it is
+    not designed to build profiles about you.[web:38]
   </p>
 
-  <p>In order to perform dark pattern analysis, DarkLens may process the following data types:</p>
+  <p>However, in order to perform dark pattern analysis, DarkLens processes certain data types:</p>
   <ul>
     <li>
-      <strong>Page content and UI elements:</strong>
-      The extension may read parts of the current web page’s DOM, visible text, button labels,
-      links, and basic layout information to analyze potential dark patterns.
+      <strong>Website content (texts, images, links, UI elements)</strong> on the page where the
+      user explicitly runs DarkLens. The extension reads parts of the current web page’s DOM,
+      visible text, button labels, links, and basic layout information to analyze potential dark patterns.
     </li>
     <li>
-      <strong>Technical information for analysis:</strong>
-      Minimal technical data (such as timestamps or request identifiers) may be used to operate
-      the analysis feature and ensure reliable service.
+      <strong>Technical information for analysis</strong>, such as timestamps or request identifiers,
+      which are necessary to operate the analysis feature and ensure reliable service.
+    </li>
+    <li>
+      <strong>Local extension settings</strong> (e.g., language, analysis options, feature toggles)
+      stored using browser storage APIs so the extension can remember user preferences.
     </li>
   </ul>
 
   <p>
-    DarkLens does <strong>not</strong> intentionally collect or store the following categories as standalone data:
+    DarkLens does <strong>not</strong> intentionally collect or store the following categories as
+    standalone data:
   </p>
   <ul>
     <li>Account details such as name, email address, or phone number</li>
@@ -69,10 +73,116 @@
     <li>
       In some cases, to provide AI-based dark pattern detection, the extension may send only the
       minimum necessary portion of the current page content (for example, texts and UI labels relevant
-      to the analysis) to a backend server over an encrypted HTTPS connection.[web:38][web:47]
+      to the analysis) to a backend server over an encrypted HTTPS connection.[web:38]
     </li>
   </ul>
 
   <p>
     The extension is not designed to extract or target PII, and the analysis process does not
-    deliberately identify you as an individual
+    deliberately identify you as an individual. Any incidental PII that appears within the page content
+    is processed only as part of the analysis of that page and is not used to create user profiles
+    or for unrelated purposes.[web:37]
+  </p>
+
+  <h2>4. Data Retention and Deletion</h2>
+  <p>
+    Data transmitted to the backend server for AI-based analysis is stored only temporarily:
+  </p>
+  <ul>
+    <li>
+      The server uses the received content solely to run the AI model and generate analysis results
+      for the requesting user session.
+    </li>
+    <li>
+      After the AI analysis is completed and a response is returned to the extension, the processed
+      content is deleted from the server within a short period of time and is not kept for long‑term
+      profiling or marketing.[web:39]
+    </li>
+    <li>
+      Any logs that must be retained briefly for reliability or security purposes are minimized,
+      do not intentionally include PII, and are periodically purged.
+    </li>
+  </ul>
+
+  <p>
+    DarkLens does not create a permanent database of page contents or analysis results linked
+    to identifiable users.
+  </p>
+
+  <h2>5. How We Use Data</h2>
+  <p>
+    DarkLens uses processed data <strong>only</strong> for the following purposes:
+  </p>
+  <ul>
+    <li>Detecting and highlighting potential dark patterns on web pages</li>
+    <li>Displaying analysis results and related risk information to the user</li>
+    <li>Maintaining and improving extension functionality and reliability</li>
+  </ul>
+
+  <p>DarkLens does not use data for:</p>
+  <ul>
+    <li>Behavioral advertising or personalized marketing</li>
+    <li>Sale or rental of data to third parties</li>
+    <li>Building unrelated analytics or commercial user profiles</li>
+  </ul>
+
+  <h2>6. Data Sharing and Third Parties</h2>
+  <p>
+    DarkLens does not sell, rent, or trade user data with third parties.[web:41]
+    If third‑party AI or infrastructure providers are used, they only receive the minimum
+    necessary data to perform the requested analysis or hosting service, and they are expected
+    to protect and promptly delete that data in line with this Privacy Policy.
+  </p>
+
+  <h2>7. Security and Transmission</h2>
+  <p>
+    Whenever DarkLens communicates with a backend server, it uses secure transmission (HTTPS)
+    in accordance with Chrome Web Store requirements for the secure handling of user data.[web:38]
+  </p>
+  <ul>
+    <li>Personal and sensitive information is never intentionally sent over unencrypted HTTP.</li>
+    <li>
+      Sensitive data is not placed in URLs or request headers when it can be avoided, in order
+      to reduce the risk of exposure in logs.
+    </li>
+  </ul>
+
+  <h2>8. User Control and Consent</h2>
+  <p>
+    By installing and using DarkLens, you consent to the processing and temporary transmission
+    of website content as described above, to the extent necessary to provide the dark pattern
+    detection functionality.[web:47]
+  </p>
+  <ul>
+    <li>You can disable or remove the extension at any time via the browser’s extensions page.</li>
+    <li>
+      Removing the extension stops all further data processing by DarkLens and removes any data
+      stored locally by the extension (such as configuration settings).
+    </li>
+  </ul>
+
+  <h2>9. Children’s Privacy</h2>
+  <p>
+    DarkLens is not directed to children and does not knowingly collect personal information
+    from children. If it is discovered that personal information from a child has been collected
+    in a manner that violates applicable law, reasonable steps will be taken to delete such information.
+  </p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>
+    This Privacy Policy may be updated from time to time. When changes are made, the
+    “Last updated” date at the top of this page will be revised. If there are material changes
+    to how data is handled, the Chrome Web Store listing and/or in‑extension notices will be
+    updated where required.[web:35][web:44]
+  </p>
+
+  <h2>11. Contact</h2>
+  <p>
+    If you have any questions about this Privacy Policy or how DarkLens handles data, please contact:
+  </p>
+  <ul>
+    <li><strong>Developer:</strong> Donghun Lee</li>
+    <li><strong>Email:</strong> <!-- add your contact email here --></li>
+  </ul>
+</body>
+</html>
